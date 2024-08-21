@@ -1,15 +1,23 @@
 import java.util.Scanner;
 
-public class ObjectArray() {
+public class ObjectArray {
 
-    // Code
+    // Code Fields.
     private Object[] array;
     private int size;
 
-    // Adding the constructor of the elements.
+    // Adding the constructor method to the elements.
     public void ArrayConstructor(int initialSize) {
         array = new Object[initialSize];
         size = 0;
+    }
+
+    //Setting the size of the resize
+    private void resize() {
+        int newArraySize = array.length;
+        Object[] newArray = new Object[newArraySize];
+        System.arraycopy(array, 0, newArray, 0, size);
+        array = newArray;
     }
 
     // Setting the size of the elements on the array.
@@ -22,7 +30,8 @@ public class ObjectArray() {
         size = Math.max(size, index + 1);
     }
 
-    // Populating the array to the right elements.
+
+    // Populating the array.
     public void populateArray() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter elements for the array: ");
