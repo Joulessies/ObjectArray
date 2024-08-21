@@ -12,7 +12,7 @@ public class ObjectArray {
         size = 0;
     }
 
-    //Setting the size of the resize
+    // Setting the size of the resize
     private void resize() {
         int newArraySize = array.length;
         Object[] newArray = new Object[newArraySize];
@@ -34,15 +34,20 @@ public class ObjectArray {
     // Populating the array.
     public void populateArray() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter elements for the array: ");
+        System.out.println("Input elements for the array: ");
         System.out.print("(Type 'exit' to quit)");
 
         while (true) {
             String input = scanner.nextLine();
             if (input.equals("exit")) {
                 break;
-            } else if (input.equals("")) {
-
+            } else if (input.isEmpty()) {
+                System.out.println("Input an empty string: ");
+            } else {
+                setElement(Integer.parseInt(input), scanner.nextLine());
+                System.out.print(STR."Element added to the array: \{input}");
+            }
         }
+        scanner.close();
     }
 }
