@@ -5,6 +5,7 @@ public class ObjectArray() {
     private Object[] array;
     private int size;
 
+    // Adding the constructor of the elements.
     public void ArrayConstructor(int initialSize) {
         array = new Object[initialSize];
         size = 0;
@@ -23,6 +24,14 @@ public class ObjectArray() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter elements for the array: ");
         System.out.print("(Type 'exit' to quit)");
+
+        while (true) {
+            String input = scanner.nextLine();
+            if (input.equals("exit")) {
+                break;
+            } else if (input.equals("")) {
+
+        }
     }
 
 }
