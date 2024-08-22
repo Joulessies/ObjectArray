@@ -55,7 +55,7 @@ public class ObjectArray {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input elements for the array (type 'exit' to quit):");
 
-        int index = 0; // To keep track of the index for setElement
+        int index = 0; 
         while (true) {
             String input = scanner.nextLine();
             if (input.equalsIgnoreCase("exit")) {
@@ -64,11 +64,9 @@ public class ObjectArray {
                 System.out.println("Empty input is not allowed. Please enter a valid element.");
             } else {
                 try {
-                    // Attempt to parse the input as an integer
                     int num = Integer.parseInt(input);
                     setElement(index++, num);
                 } catch (NumberFormatException e) {
-                    // If parsing fails, treat the input as a string
                     setElement(index++, input);
                 }
             }
